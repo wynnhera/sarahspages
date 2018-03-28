@@ -1,119 +1,124 @@
-<!--
-    - This block is a comment in HTML -
-    HTML5 Responsive Web Design Template
-    by Stefan Schultz
-    for MDDN 352: Mobile Media (T1 2018)
-    - If you use this template, remove most of the comments for production, or minify your HTML. -
-    Want a quick overview of all HTML tags? Cheatsheet here: https://html.com/wp-content/uploads/html-cheat-sheet.pdf
--->
 
-<html lang="en"> <!-- This tells the browser that this document is HTML code, and in English. -->
+
+<html lang="en"> 
     <head>
 
-        <!-- The head is where basic page settings are applied, but no actual page content (you won't see any of this in the browser viewport) -->
+        <title>Trailmate</title> 
 
-        <title>Responsive Template</title> <!-- Title of page for search engines + windows/tabs -->
-
-        <!-- Meta tags provide information about the website, but not necessarily used by the site itself - often for search engines, or the browser. -->
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> <!-- Fallback/compatibility tag for telling the browser how to read this code, as HTML. -->
-        <meta name="description" content="This webpage is an example template to build a responsive HTML5 website." /> <!-- Description of what the website/content. This is how you do Search Engine Optimisation. -->
-        <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- This sets the page size, and lets you use media queries in CSS for responsiveness -->
-
-        <!--
-            Link tags here point to files you want to include in the site, such as icons and stylesheets.
-            "rel" = relevance; what the linked file means. "href" = where the file is, either online or relative to this document - never used a full local path (i.e. C:/Users/Name/Documents...index.html). Only reference as far back as the index.html file.
-        -->
-        <link rel="shortcut icon" href="media/favicon.png" /> <!-- Replace the linked file with your icon. -->
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" /> <!-- This is normalize.css, which resets basic/default styling across browsers, making design and layout easier and more consistent. -->
-
-        <link rel="stylesheet" href="css/main.css" /> <!-- This links to your custom page styling. -->
-
-        <!-- This links to a webfont, from Google Fonts; this lets you use a font not installed on the user's system. This is Roboto, the Android system font, with all weights, and italics. We'll call this in 'css/main.css' later.  -->
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+        <meta name="description" content="This webpage is an example template to build a responsive HTML5 website." /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+        
+        <link rel="shortcut icon" href="media/favicon.png" /> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" /> 
+        <link rel="stylesheet" href="css/main.css" /> 
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     </head>
 
     <body>
-        <!-- This is the body of the webpage - in here are all the things that you will display in the browser viewport: text, images, etc. -->
-        <section>
-            <!--
-                This is a section; it helps split the page neatly, and is good for accessibility, as well as jumping to with a link if need be.
-                We'll use this one as a page header.
-            -->
-            <header>
-                <!-- This is the special header tag, for accessibility purposes -->
-                <h3>
-                    <!-- "<h3>" represents the third level of a heading (you can use h1 - h6). It is larger, and bold by default. Put the text between the open <h3> and close </h3> tags -->
-                    Responsive Website
-                </h3>
-                <div class="mobile-notifier-width">
-                    error
-                </div>
-                <div class="mobile-notifier-height">
-                    error
-                </div>
-            </header>
+        <section>           
+            <header></header>
         </section>
-
-        <section class="hero">
-            <!-- We've given this section a class; so we can give it unique styling with CSS later, by selecting the class name. -->
-            <div class="scrim">
-                <!-- A div (or division) lets us split the page into chunks that can be worked with and styled more specifically. In this case, we're nesting text inside a div, so we can create an effect in CSS that makes the text more readable. -->
-                <h2>This is a responsive website template!</ßh2>
-            </div>
-        </section>
-
-        
+ 
 
         <section class="body-section">
-            <!-- Let's make another "normal" body section, but this time we'll split it into 3 columns, and make it evenly resize and reflow by using Flexbox. -->
+	  		<h1 style="color:#ffa500">
+	  			Trailmate
+	  		</h1>
+	</div>
+		<img src="mockups.PNG" alt="missing img" style="">
+	</div>
+		<div class="intro">
+		<h1>
+			User Friendly
+		</h1>
+		
+		<div class="prompt">
+			
+		<h3>		
+			I have focused on re-designing the main information, and making that more <b>accessible to mobile users.</b> 
+		</h3>
+		
+		<h3>
+		The application opens up into a map spanning the entire screen. The user will be prompted with the option to: <br><br><b>"Look for tracks near by"<br></b> alternatively, the user can <b>browse the map</b> or type key words into the <b>Search Bar</b>  	
+		</h3>		
+	
+		<h3>		
+		Tracks appear as colored lines, and <b>loop tracks are shaded</b> in to represent a closed path. <br><br>Color represent grade of difficulty, and red means a track is CLOSED. <br><br> When a track is selected it will glow, and a box containing information about the trail will pop up from the bottom of the screen.
+		</h3>
+	</div>
+
             <div class="body-flex">
                 <div>
-                    <h3>Height of the page</h3>
-	                <div class="mobile-notifier-height">
-	                    error
-	                </div>
-                </div>
-               
+					<h1>
+						Open App
+					</h1>
+					<h3>
+						User is prompted with the option to <b>search for tracks near by.</b><br> <b>Browse map,</b> or use the <b>Search Bar.</b> 
+					</h3>
+					<h3 class="h31">
+						<b>Google Map API <br> Search API <br> Search Location</b>
+					</h3>
+                </div>  
+
                 <div>
-                    <h3>Width of the page</h3>
-	                <div class="mobile-notifier-width">
-	                    error
-	                </div>
+					<h1>
+						Find a Track
+					</h1>
+					<h3>
+					Paths of the tracks are colored in to represent the difficulty. Looped tracks are filled in to show a closed loop. 
+					</h3>
+					<h3 class="h31"><b>
+						<span class= "green"> Green : EASY </span> <br>
+						<span class= "blue"> Blue : INTERMEDIATE </span> <br>
+						<span class= "purple"> Purple : ADVANCED  </span> <br> 
+						<span class= "red"> Red : Track CLOSED! </span> <br>
+					</b>
+					</h3>
                 </div>
 				
+				
                 <div>
-                    <a href="https://www.youtube.com/watch?v=FlMHdhf0nvE"><h3>this is a link</h3></a>
-                    <!-- An "a" tag makes a line of text into a hyperlink to the specified href. You can wrap any element in an "a" tag to make it a link. -->
+                  
+					<h1>
+						Read Info Box
+					</h1>
+					<h3>
+						when a track is selected, an info box pops up, containing all the important stats about a track. 
+					</h3>
+					<h3 class="h31">
+						<b>
+						CSS
+					</b>
+					</h3>
                 </div>
+				
+				
+                <div>
+                   
+					<h1>
+						Community
+					</h1>
+					<h3>
+						Browse or leave comments, tips and photos.  
+					</h3>
+					<h3 class="h31">
+						<b>
+						Comment API
+						Image Upload API
+					</b>
+					</h3>
+                </div>
+  
             </div>
         </section>
-		
-        <section class="body-section">
-            <!-- We'll make this a "normal" body section. It's best practice in HTML/CSS to use "spinal-case" for classnames & IDs: that means dashes ("-") instead of spaces - you cannot have a space in a classname, or each word will be treated as a seperate class! -->
-            <p>
-                <!-- This is a standard paragraph. -->
-                Lorem ipsum filler text to fill in a space, and give an example of a paragraph in HTML. <strong>Using "strong" tags, you can make bold text,</strong>, or <em>"em" tags for italics - emphasis</em>. We can then style with CSS should we need to - and you can pick out the strong or em tags individually to style them, to.<br /> <br /> There is a break tag to create a new paragraph with a line break before this line. Everything should resize and reshape neatly when we resize the window, and change the viewport dimensions.
-            </p>
-        </section>
 
-        <!-- This is the footer, which we can stick to the bottom of every page in CSS. Having a footer is best practice, as a place to put credits + copyright, and additional links. It is also a desigend way to note there is no more content on this page. -->
-        <footer>
-            <h5>&copy; 2018. All rights reserved.</h5> <!-- "&copy;" is an HTML character code for the copyright sign. Using these ensures special characters render correctly across platforms. -->
-        </footer>
+       
+        <footer> </footer>
 
-        <!--
-            At the very bottom of the body - so it's the last items to load (as they're often the slowest, and not needed for basic content) are the script tag links for any Javascript or plugins you're loading.
-            We're going to load the jQuery library (a nice easy way to select things in Javascript), and a custom script document.
-        -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
         <script src="scripts/script.js"></script>
 
     </body>
-
-    <!--
-        Don't forget to close out your body and HTML tags, so the browser knows this document ends, and it can render everything correctly.
-        Now we'll take a look at CSS - in css/main.css
-    -->
 
 </html>
