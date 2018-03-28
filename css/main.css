@@ -1,301 +1,165 @@
-/*  This is a comment in CSS.
-    HTML5 Responsive Web Design Template
-    by Stefan Schultz
-    for MDDN 352: Mobile Media (T1 2018)
-    - If you use this template, remove most of the comments for production, or minify your HTML. -
-*/
-
-
-/* -------- Base styles - these will always apply, no matter what. -------- */
-
 html {
     font-family: 'Roboto', sans-serif;
-    /* Here we say that every piece of text should be in the Roboto font we loaded from Google in the HTML header; if that can't load, use the browser default sans serif font. */
-
-    font-size: 16px;
-    /* This tells every piece of text should default to 16px in size. We'll use other values as multipliers of this later, but this ensures styling consistency across browsers/platforms. */
-
+    font-size: 12px;
     color: rgb(70,70,85);
-    /* This sets all text to be a very dark, slightly blue grey. You can specify a named color, a hex code (#FFFFFF, e.g.), use rgb or hsl, or use rgba/hsla for color with alpha (translucency). */
-
     overflow-x: hidden;
-    /* This is telling the browser to hide anything that goes off the left and right edges of the page, and not let the user scroll to see it. */
-
 }
 
 body {
     width: 100%;
 }
 
-header {
-    position: fixed;
-    /* This locks the element to the position we set - even when the user scrolls the browser, this element will not move; it will *always* stay on screen. */
 
-    top: 0;
+footer {
+    bottom: 0;
     left: 0;
     right: 0;
-    /* Because this is a fixed element, we can manually set the edges of the element: in this case, to the top, left and right of the viewport. */
-
     height: 50px;
-    /* Now we can say how high the element is. You can use a variety of units, "px" being pixels for fixed, unchanging sizes. */
-
-    background-color: rgba(0, 117, 255, 0.85);
-    /* This sets the entire background of the element to a color, in this case, a slightly translucent blue. */
-
-    z-index: 10;
-    /* This tells the element how to layer. We want the header on top of everything else, so be sure to set this number higher than any other element, or it could be covered up at some point. */
-
-    -webkit-backdrop-filter: blur(25px);
-    /* This is an example of a browser specific tag - to blur content as it passes behind the element. This will only work in WebKit browsers, so to see it, open this page in Safari. The "-engine" prefix tells specific browsers how to handle unique things, but should generally be avoided to maximise compatibility. */
-
-    transition: 0.2s;
-    /* This tells the browser to smoothly change between properties if a change occurs - fade between colours, for example. The 0.2s specifies it will take 0.2 seconds to complete. */
 }
 
-header h3 {
-    /* Now we have selected every h3 element that is a child of a header element, so we can style them uniquely. */
-    color: white;
-
-    font-size: 1.6rem;
-    /* This sets the header h3 text to be 1.6x the base size we declared on the HTML (16px). "rem" is a relative measurement, which works as a multiplier to a base size you set on all HTML. This makes resizing for accessibility/different screen sizes and layouts very easy.*/
-
-    line-height: 0.1rem;
-    /* One of the easiest ways to vertically center text in a box is by seting the line height to a fraction of the full size. This won't work for multi-line blocks of text! */
-
-    text-align: center;
-}
-
-.mobile-notifier-width {
-    display: none;
-    /*
-        Setting display to "none" here will hide this element by default. We can then show it later, when specific conditions are met.
-        We're still declaring the base styles here though, in case we want to use the element in different places later.
-     */
-
-    position: absolute;
-    /* This sets the element's position to "absolute", which means it is positioned in a fixed position of the browser viewport, and will not move with other elements. This can cause issues with layout at different screen sizes, or if you add more content, so use with care, and as little as possible. */
-
-    top: 8px;
-    right: 5px;
-    /* Absolute positioning lets us use these edge values for positioning in the same way as fixed positioning. */
-
-    color: rgba(200,50,42,0.8);
-    font-weight: 800;
-    /* Font-weight is how we make text lighter, or more bold. You can use keywords, or numerical values from 100 - 900 (round to the hundred). 100 is the lightest possible weight, 900 the boldest. Not all fonts provide all weights, so some trial and error is best here. */
-
-    border: solid 4px rgba(200,50,42,0.8);
-    /* This puts an even border all the way around the element - a solid line (you can also use "dashed"), that is 4px thick (you can use any CSS values here), and with the colour rgba(200,50,42,0.8) - so it's also slightly translucent. */
-
-    padding: 5px 10px 5px 10px;
-    /* This lets you put additional spacing around an element or text, to style or lay it out better. You can use it in the same way as border, (padding-left, padding-right, etc.), or like this- padding: top, right, bottom, left.  */
-
-    border-radius: 8px;
-    /* This makes the corners of the shape rounded, by the value declared. It is always an even quarter circle rounding, so if you set the value high enough, it can be used to make a circle from a square in CSS. */
-
-}
-.mobile-notifier-height{
-    color: rgba(200,50,42,0.8);
-    font-weight: 800;
-    border: solid 4px rgba(200,50,42,0.8);
-	padding: 5px 10px 5px 10px;
-	border-radius: 8px;
-}
-
-.hero {
-    /* Placing a dot before text selects elements by their classname. A "hero" is traditonally a big, full size image that introduces a page. */
-
-    height: 70vh;
-    /* "vh" and "vw" are "Viewport Height" and "Viewport Width" - these values are expressed as percentages of how tall or wide your viewport is, so dynamically change size with the browser or screen. This example is 70% of the viewport height. */
-
-    background-image: url(http://stefanschultz.me/pages/whether/media/WhetherCover.jpg);
-    /* This sets an image from a URL to be the background of an element. You should avoid linking directly to other people's sites/images nearly always - it's bad practice, and can be illegal. (I have linked to my own site for this example) */
-
-    background-position: center;
-    /* This sets the background image position - the point around which it will tile or scale. */
-
-    background-repeat: none;
-    /* This tells the background image to not repeat or tile, but just display once. Anywhere not covered by the image will default to the background-color, if set (else, "clear" or white) */
-
-    background-size: cover;
-    /* Using this, the image will scale to completely cover its' element container at all times, never leaving blank space or repeating. The edges of the image may be cropped off to make it cover properly. Use "contain" to fit the image to its' container with no cropping - this will leave blank space (or tiling) around it normally. */
-}
-
-.scrim {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 30vh;
-    top: 10vh;
-    /* We're using absolute positoning here to get something that stretches across the window completely, and we know the vertical positoning of. The viewport height relative (vh) values help cover any resizing issues that might crop up. */
-
-    background: linear-gradient(0deg, rgba(25,25,30,0.75) 0%,rgba(35,35,40,0) 100%);
-}
-
-.scrim > h2 {
-    /* Using the ">" character here selects any h2 that is an IMMEDIATE (direct) child of a .hero class element. If an h2 was nested inside a div inside a .hero element, it would be unaffected. */
-    position: relative;
-    text-align: center;
-    top: 50%;
-    width: 100%;
-    font-weight: 100;
-    color: white;
-    font-size: 3rem;
-    text-shadow: 0 5px 15px rgba(25,25,25,0.9);
+header {
+	height:5%;
 }
 
 .body-section {
-    margin-top: 50px;
-    margin-bottom: 300px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-top:0;
+    margin-bottom: 0;
+    margin-left: 10%;
+    margin-right: 10%;
     line-height: 1.8rem;
-    /* Here we are using line-height as good typographic practice - by increasing the line spacing (properly called "leading" [ledd-ing]) we make the text more visually pleasing, and significantly easier to read. Generally make your leading between 1.4 - 2.0x the size of your font for the best readablity. This will vary by typeface, weight, and size - bigger text generally can use significantly less leading than smaller text.  */
-
     text-align: center;
-    /* This simply centers your text inside its parent element - this doesn't always make it dead center on the page. */
+}
+
+.body-section > h1 {
+    position: relative;
+    text-align: center;
+    font-weight: 800;
+    color: rgb(70,70,85);
+    font-size: 4rem;
+}
+
+.prompt {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+img{
+	margin:10px;
+	width:100%;
+	height:auto;
+}
+
+.green {
+	color:#4AC948;	
+}
+
+.blue {
+	color:#0000ff;	
+}
+
+.purple {
+	color:#800080;	
+}
+
+.red {
+	color:#ff0000;	
+}
+
+.intro h3{
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-top: 20px;
+	margin-left:;
+	width:30%;
+	
+	//background-color:pink;
 }
 
 .body-flex {
     margin-left: 0;
     margin-right: 0;
+	margin-top:20px;
+	padding-top:30px;
     width: 100%;
     display: flex;
-    /* This makes the selected element a "flexbox", which will automatically resize and reflow its child elements to fit the window size, and specific rules you set. */
 
     flex-wrap: wrap;
-    /* This tells flex to push items underneath if there isn't enough space to display them all across. */
 
     justify-content: space-between;
-    /* When using flexbox, this tells it how to layout the child elements - in this case, placing even space between each one, until they are laid out equally, but the end elements are hard against the parent. */
+	border-top: solid 1px rgb(255,165,0);
 
 }
 
 .body-flex > div {
-    /* Selecting all the divs that are direct children of the ".body-flex" element. */
-
     min-width: 300px;
-    /* Using flexbox, elements will resize. This property defines a width that the selected element cannot shrink below. You can also define a minimum height. When the minimum width is reached, elements are wrapped down onto a new line, unless you turn this off.  */
-
     flex-grow: 1;
-    /* This sets the ratio to grow flex children by - in this case, all evenly 1, so each one will be the same size at all times. If you selected one specific div and set this to 2, the one would always be twice as wide as the two others. */
-
-    height: 350px;
-
+	width: 100%;
     padding: 10px;
-    margin: 10px;
-    background-color: rgb(240,240,240);
-
-    box-shadow: 0px 3px 25px -5px rgba(25,35,25,0);
-    /* This puts a drop shadow underneath an element, that is 0px offset on the x-axis, 3px offset on the y-axis, has a blur radius of 25px, and -5px spread (so its overall pulled in and shrunk). The color is set with an RGBA value, but made totally translucent. */
-
-    transition: 0.2s ease;
+	padding-top:10px;
+	transition: 0.2s ease;	
+	
+}
+ 
+.body-flex .h31{
+	width: 20%;
+	float:right;
 }
 
-.body-flex h3 {
+.body-flex h1{
+	width: 35%;
+	float:left;
+}
+
+
+.body-flex h3{
     font-weight: 400;
     font-size: 1.4rem;
-    margin-top: 150px;
+    margin-top: 0px;
+	width: 25%;
+	float:left;
 }
+
 
 a {
     text-decoration: none;
-    /* This removes the default underline from any link on the page. */
-
     color: inherit;
-    /* This tells every "a" tag element to match its colour to its parent - in this case that is coming from the property we set on the entire HTML. You can use "inherit" for most CSS properties, to tell them to take the value of their parent. */
-}
-
-.body-flex > div:nth-of-type(2) {
-    background-color: rgb(180,230,250);
-    /* The ":nth-of-type" selector lets you pick one specific element from many similar ones - in this case, the second div of the three we put inside ".body-flex". You can then apply unique styling, saving creating a new class, or using an ID. Sometimes it is still better to use another class, but nth-of-type works well for specific, one-off styling of an element. */
-}
-
-.body-flex > div:nth-of-type(3) {
-    /* border-bottom: solid 0px rgb(120, 0, 255); */
-    box-shadow: inset 0 0px 0 0 rgb(120,0,255);
-}
-
-footer {
-    position: absolute;
-    /* This lets us place an element very specifically, independent of all other elements - it removes it from "the flow", in correct speak. */
-
-    margin-top: 100px;
-    left: 0;
-    right: 0;
-    height: 80px;
-
-    overflow: hidden;
-    /* This tells the browser to cut off everything that falls outside this element, and not let the user scroll to it. */
-
-    color: rgb(70,70,85);
-
-    border-top: solid 1px rgb(0,117,215);
-    /* This sets a border on the element, but only on the top. You can have seperate borders for each side, or declare for all with just "border". */
-
-    background-color: #d4d4f5;
-}
-
-footer h5 {
-    margin-left: 10%;
 }
 
 @media(max-width: 850px) {
-    /*
-        This checks the viewport width, and if it is less than the max specified (850px here), the contained style rules are applied.
-        This width (here, 850px), is called a breakpoint. You can define multiple breakpoints, but usually you won't need to thing about more than 3 sizes - mobile, tablet, and desktop. If you work efficiently and design carefully, one breakpoint may be enough.
-
-        The C in CSS means cascading - all of the styles above flow on throughout, so you only need to state the styles you want to change - everything else will stay the same.
-        Therefore, start with specifying basic values that will always apply, and then add specific variations inside media queries ("@media(){}").
-    */
 
     html {
         font-size: 14px;
     }
 
-    header {
-        background-color: rgba(240,240,240,0.85);
-        border-bottom: solid 1px rgba(180,180,180,0.25);
-    }
 
     header h3 {
         line-height: 0.5rem;
         color: rgba(50,50,50,0.75);
     }
-
-    .mobile-notifier-width {
-        display: block;
-        /* Here we set display back to "block" (the default) so that the element is only shown below this breakpoint. */
-    }
 	
-    .mobile-notifier-height {
-        display: block;
-        /* Here we set display back to "block" (the default) so that the element is only shown below this breakpoint. */
-    }
+	.prompt h3{
+	    font-weight: 400;
+	    font-size: 1.2rem;
+	    margin-top: 20px;
+		width:100%;
+	}
+	
+	.body-flex h3 {
+		font-size: 1.0rem;
+	
+	}
+	
+	.body-flex h1 {
+		font-size: 1.5rem;
+	}
+	
+	 .prompt br { display: none; }
 
-}
 
-@media(hover: hover) {
-    /* This media query doesn't yet work in Firefox, but does everywhere else, and lets us select only browsers with hover support - so ones using a mouse cursor, not touch. With this, we can add in effects that happen when the use hovers their mouse cursor. These shouldn't be applied for touchscreen devices because you cannot "hover a cursor" on those platforms. */
-
-    .body-flex > div:hover {
-        /* Putting ":hover" immediately after the selected element tells the browser to apply the values only when a mouse cursor is placed over it. */
-
-        transform: scale(1.05);
-        /* This will increase the element's (+ its children) size evenly while it is hovered over. */
-
-        box-shadow: 0px 0px 25px -10px rgba(25,35,25,0.35);
-        /* Because we added the box shadow earlier, we can now make it appear when the user hovers over the element, by  */
-    }
-
-    .body-flex > div:nth-of-type(2):hover {
-        background-color: rgb(150,240,250);
-    }
-
-    .body-flex > div:nth-of-type(3):hover {
-        color: white;
-        box-shadow: inset 0 -400px 0 0 rgb(120,0,255), 0px 0px 25px -10px rgba(25,35,25,0.35);
-        /* This (with the standard non-hover state and transition) is a little trick for making an animated hover effect of something filling. */
-    }
 }
 
 
