@@ -1,124 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   	<link rel="stylesheet" href="css/main.css" /> 
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   
+	<script>
+		$(document).ready(function(){
+    		$(".redtrack").click(function(){
+        		$("myDIV").hide(1000);
+    		});
+		});
+	</script>      	
+  </head>
 
-
-<html lang="en"> 
-    <head>
-
-        <title>Trailmate</title> 
-
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
-        <meta name="description" content="This webpage is an example template to build a responsive HTML5 website." /> 
-        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-        
-        <link rel="shortcut icon" href="media/favicon.png" /> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" /> 
-        <link rel="stylesheet" href="css/main.css" /> 
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-    </head>
-
-    <body>
-        <section>           
-            <header></header>
-        </section>
- 
-
-        <section class="body-section">
-	  		<h1 style="color:#ffa500">
-	  			Trailmate
-	  		</h1>
-	</div>
-		<img src="mockups.png" alt="missing img" style="">
-	</div>
-		<div class="intro">
-		<h1>
-			User Friendly
-		</h1>
-		
-		<div class="prompt">
-			
-		<h3>		
-			I have focused on re-designing the main information, and making that more <b>accessible to mobile users.</b> 
-		</h3>
-		
-		<h3>
-		The application opens up into a map spanning the entire screen. The user will be prompted with the option to: <br><br><b>"Look for tracks near by"<br></b> alternatively, the user can <b>browse the map</b> or type key words into the <b>Search Bar</b>  	
-		</h3>		
 	
-		<h3>		
-		Tracks appear as colored lines, and <b>loop tracks are shaded</b> in to represent a closed path. <br><br>Color represent grade of difficulty, and red means a track is CLOSED. <br><br> When a track is selected it will glow, and a box containing information about the trail will pop up from the bottom of the screen.
-		</h3>
-	</div>
+   
+  <body>
+	<header>
+		  <div class="header">
+		    <a href="#default" class="logo">NzTracks logo</a>
+		    <div class="header-right">
+		      <!-- <a class="active" href="#home">Home</a>
+		      <a href="#contact">Contact</a> -->
+		      <a href="#about"><input id="pac-input" class="controls" type="text" placeholder="Search"></a>
+		    </div>
+		  </div>
+		  
 
-            <div class="body-flex">
-                <div>
-					<h1>
-						Open App
-					</h1>
-					<h3>
-						User is prompted with the option to <b>search for tracks near by.</b><br> <b>Browse map,</b> or use the <b>Search Bar.</b> 
-					</h3>
-					<h3 class="h31">
-						<b>Google Map API <br> Search API <br> Search Location</b>
-					</h3>
-                </div>  
+	</header>
 
-                <div>
-					<h1>
-						Find a Track
-					</h1>
-					<h3>
-					Paths of the tracks are colored in to represent the difficulty. Looped tracks are filled in to show a closed loop. 
-					</h3>
-					<h3 class="h31"><b>
-						<span class= "green"> Green : EASY </span> <br>
-						<span class= "blue"> Blue : INTERMEDIATE </span> <br>
-						<span class= "purple"> Purple : ADVANCED  </span> <br> 
-						<span class= "red"> Red : Track CLOSED! </span> <br>
-					</b>
-					</h3>
-                </div>
-				
-				
-                <div>
-                  
-					<h1>
-						Read Info Box
-					</h1>
-					<h3>
-						when a track is selected, an info box pops up, containing all the important stats about a track. 
-					</h3>
-					<h3 class="h31">
-						<b>
-						CSS
-					</b>
-					</h3>
-                </div>
-				
-				
-                <div>
-                   
-					<h1>
-						Community
-					</h1>
-					<h3>
-						Browse or leave comments, tips and photos.  
-					</h3>
-					<h3 class="h31">
-						<b>
-						Comment API
-						Image Upload API
-					</b>
-					</h3>
-                </div>
-  
-            </div>
-        </section>
+   <div id="map" style="position:relative; overflow:hidden;"></div> 
 
-       
-        <footer> </footer>
+	 	
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-        <script src="scripts/script.js"></script>
+		<div id="myDIV">
+			
+		  <div class="flex-container">
+			  <div class="warningdiv">
+				  <div>
+					  <h2>WARNING : Track is CLOSED - due to slips</h2>
+				  </div>
+			  </div>
+		    <div class="one">
+				<h1>Wilton BushWalk</h1>
+				<h3>Hawkins Hill, Wellington, New Zealand</h3>
+				<p>From Sinclair Head the track gets increasingly rough and ill-defined. By the time you're a couple of kilometres from Karori Rock, the track has degenerated into a (large) pebble rumble with sections of unridable deep, soft sand. At low tide it might be possible to ride on the compacted wet sand along the water line, but don't count on it. Most likely there will be a bit of walking involved.
+<br></br>
+About 1.7km from Sinclair Head there is a track diverging up the cliff face. This initially goes to a memorial overlooking Cook Strait and then heads inland to Long Gully.</p>
+			</div>
+		
+		    <div class="two">
+				<h2 class="trackLength">6.71 km</h2>
+				<h2 class="trackGrade">Intermediate</h2>
+				<h2 class="trackType">Bike + Foot</h2>
+				<h2 class="trackType">Single</h2>				
+			</div>
+			
+		    <div class="three">
+				<h3>Getting there</h3>
+				<p>Continue around the coastline from the end of Pariwhero at Sinclair Head.</p>
+				<h3>Other notes</h3>
+				<p>Watch out for the 4x4 drivers. They don't like stopping on the soft parts of the track, in case their vehicles get stuck. Consequently most of them will charge on through and expect everyone else to get out of the way.</p>	
+			</div>	
+		  </div>
 
-    </body>
-
+		</div>
+		
+	<footer></footer>	 
+	
+	
+<script src="main.js"></script>	
+		
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJawlPVD0ArnUH5bUebuxnn5j1Vx3P5XQ&callback=initMap">
+	</script>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJawlPVD0ArnUH5bUebuxnn5j1Vx3P5XQ&libraries=places&callback=initAutocomplete">
+	</script>
+	
+  </body>
 </html>
+      
